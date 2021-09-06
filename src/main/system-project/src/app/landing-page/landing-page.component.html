@@ -11,19 +11,11 @@
     <form class="form-signin">
         <h1>Enter your credentials</h1>
 
-        <div>
-            <input type="text" [(ngModel)]="firstName" placeholder="First Name" name="firstNameVal" id="firstName"
+            <p>
+                <input type="text" [(ngModel)]="firstName" placeholder="First Name" name="firstNameVal" id="firstName"
                 #firstNameVal="ngModel" class="form-control" required autofocus>
-            <div *ngIf="firstNameVal.invalid && (firstNameVal.dirty || firstNameVal.touched)" class="alert">
-
-                <div *ngIf="firstNameVal.errors?.required">
-                    Name is required.
-                </div>
-
-            </div>
-        </div>
-
-
+            </p>
+            
         <p>
             <input [(ngModel)]="lastName" placeholder="Last Name" name="lastName" class="form-control" required
                 autofocus>

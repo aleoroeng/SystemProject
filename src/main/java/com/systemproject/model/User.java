@@ -1,6 +1,7 @@
 package com.systemproject.model;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -18,17 +19,17 @@ public class User implements Comparable<User>{
     private String businessJustification;
     private String status;
 
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "dates")
-    private Date date;
+    @Column(name = "date_applied")
+    private LocalDate date;
+    @Column(name = "date_resolved")
+    private LocalDate dateResolved;
     //Constructors
     public User(){}
 
-    public User(long id, String status){
-        this.id = id;
-        this.status = status;
+    public User(LocalDate dateResolved){
+        this.dateResolved = dateResolved;
     }
-    public User(String firstName, String lastName, long contactNumber, String emailId, String address, String businessJustification, String status,Date date) {
+    public User(String firstName, String lastName, long contactNumber, String emailId, String address, String businessJustification, String status,LocalDate date) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.contactNumber = contactNumber;
@@ -40,6 +41,15 @@ public class User implements Comparable<User>{
     }
 
     //Getters and setters
+
+    public LocalDate getDateResolved() {
+        return dateResolved;
+    }
+
+    public void setDateResolved(LocalDate dateResolved) {
+        this.dateResolved = dateResolved;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -100,11 +110,11 @@ public class User implements Comparable<User>{
         this.status = status;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

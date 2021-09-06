@@ -18,7 +18,6 @@ public class UserController {
     }
     @PostMapping("/user/apply")
     public User apply(@RequestBody User user){
-        System.out.println(user);
         return userService.adduser(user);
     }
 }

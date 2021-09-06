@@ -14,19 +14,26 @@ export class LandingPageComponent implements OnInit {
 
   firstName = "";
   lastName = "";
-  contactNumber = 0;
+  contactNumber !: number;
   emailId = "";
   address = "";
   businessJustification = "";
   status = "pending";
+  
   ngOnInit(): void {
   }
 
   addUser() {
     let userProvided = new User(this.firstName, this.lastName, this.contactNumber, this.emailId, this.address, this.businessJustification, this.status, new Date());
 
-    this.userService.addUser(userProvided).subscribe(res => {
-      console.log(res);
-    });
+    if(this.firstName !== "", this.lastName != "", this.contactNumber != 0, this.emailId != "", this.address != "", this.businessJustification != ""){
+      this.userService.addUser(userProvided).subscribe(res => {
+        console.log(res);
+        alert("Request sent");
+      });
+    }else{
+      alert("Fill out all fields");
+    }
+    
   }
 }
