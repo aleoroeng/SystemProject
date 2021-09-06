@@ -1,0 +1,18 @@
+.rejected{
+    background-color: red;
+    color: black;
+}
+
+.approved{
+    background-color: green;
+    color: black;
+}
+
+.pending{
+    background-color: yellow;
+    color: black;
+}
+
+.hovering:hover{
+    cursor: pointer;
+}

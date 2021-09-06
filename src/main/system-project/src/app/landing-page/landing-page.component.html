@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <form class="form-signin">
+        <h1>Enter your credentials</h1>
+
+        <div>
+            <input type="text" [(ngModel)]="firstName" placeholder="First Name" name="firstNameVal" id="firstName"
+                #firstNameVal="ngModel" class="form-control" required autofocus>
+            <div *ngIf="firstNameVal.invalid && (firstNameVal.dirty || firstNameVal.touched)" class="alert">
+
+                <div *ngIf="firstNameVal.errors?.required">
+                    Name is required.
+                </div>
+
+            </div>
+        </div>
+
+
+        <p>
+            <input [(ngModel)]="lastName" placeholder="Last Name" name="lastName" class="form-control" required
+                autofocus>
+        </p>
+        <p>
+            <input [(ngModel)]="contactNumber" placeholder="Contact Number" name="contactNumber" class="form-control"
+                required autofocus>
+        </p>
+        <p>
+            <input [(ngModel)]="emailId" placeholder="Email Id" class="form-control" name="emailId" required autofocus>
+        </p>
+        <p>
+            <input [(ngModel)]="address" placeholder="Address" class="form-control" name="address" required autofocus>
+        </p>
+        <p>
+            <textarea [(ngModel)]="businessJustification" class="form-control" name="businessJustification"
+                placeholder="Business Justification" aria-label="With textarea"></textarea>
+        </p>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="addUser()">Submit</button>
+        <div>
+            <a class="form-control" href="/login">Login as Admin</a>
+        </div>
+    </form>
+    
+</body>
+
+</html>
