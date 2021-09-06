@@ -1,4 +1,4 @@
-insert into admins(username, password, role) values('jessi', 'admin', 'admin');
+insert into admins(username, password, role) values('admin', 'admin', 'admin');
 insert into authorities(username, authority) values('ale', 'write');
 insert into users(first_name, last_name, contact_number, email_id, address, business_justification, status, dates) values
 ('John', 'Marshal', 7864447799,'john@gmail.com','65w 33th ave Brooklyn, New York', 'I need access to see the new system', 'pending', '2021-06-21'),
